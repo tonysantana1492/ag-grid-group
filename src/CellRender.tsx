@@ -1,10 +1,8 @@
-import { CustomCellRendererProps } from "ag-grid-react";
-
 export const CellRenderer = ({
   data,
   value,
   updateData,
-}: CustomCellRendererProps) => {
+}: any) => {
   const getIcon = () => {
     if (data.childrens.length === 0) return "";
 
