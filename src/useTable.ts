@@ -118,6 +118,18 @@ export const useTable = () => {
     }
   }, []);
 
+  const exportDataAsCsv = () => {
+    const columnKeys = gridRef.current.columnApi
+      .getColumns()
+      .filter((column: any) => !column.colDef.skipToExport)
+      .map((column) => column.getId());
+
+    gridRef.current?.api.exportDataAsCsv({
+      fileName: `test.csv`,
+      columnKeys,
+    });
+  };
+
   return {
     defaultColDef,
     paginationPageSizeSelector,
@@ -127,5 +139,6 @@ export const useTable = () => {
     isFullWidthRow,
     fullWidthCellRendererComponent,
     getRowHeight,
+    exportDataAsCsv
   };
 };

@@ -16,10 +16,12 @@ export const Test = () => {
     isFullWidthRow,
     fullWidthCellRendererComponent,
     getRowHeight,
+    exportDataAsCsv
   } = useTable();
 
   return (
     <div style={{ height: "100vh", width: "100vw" }}>
+      <button onClick={exportDataAsCsv}>Export</button>
       <div style={gridStyle} className={"ag-theme-quartz-dark"}>
         <AgGridReact
           ref={gridRef}
